@@ -44,15 +44,17 @@ python3 main.py
 Our tests are working on three different sets of images. Here are some examples of results and their explanation.
 
 #### Population representatating template
-- demons are on are scattererd on the contour of $S$.
-- deformation are rigid, so one direction for all pixels
-- iterative $\phi_n$ given by the affine transform, so explicit
-- magnitude of force same, but correctness still assured since the number of support to exert force supposedly diminish when shapes overlap
+- Random initialization of control points
+- momentum of 0
+- two steps gradient descent momentum and control points
+- loss: MSE
+- regularization: euclidian norm on momentum (integrated on path)
 
-DISCLAIMER: the maximum generality we allow ourselves is to deal only with disks of different direction, and allow ourselves only rigid transform plus white background
 
 Starting from mean image initialization
 ![](https://github.com/miki998/Unsupervised-Image-normalization-Atlas/blob/master/example1.png)
+
+
 After 80 iterations
 ![](https://github.com/miki998/Unsupervised-Image-normalization-Atlas/blob/master/example2.png)
 
