@@ -43,7 +43,7 @@ python3 main.py
 
 Our tests are working on three different sets of images. Here are some examples of results and their explanation.
 
-#### Implementation of demon 0
+#### Population representatating template
 - demons are on are scattererd on the contour of $S$.
 - deformation are rigid, so one direction for all pixels
 - iterative $\phi_n$ given by the affine transform, so explicit
@@ -51,7 +51,16 @@ Our tests are working on three different sets of images. Here are some examples 
 
 DISCLAIMER: the maximum generality we allow ourselves is to deal only with disks of different direction, and allow ourselves only rigid transform plus white background
 
-![](https://github.com/miki998/image_registration-maxwell_demons/blob/master/readme_images/demon0.png)
+Starting from mean image initialization
+![](https://github.com/miki998/Unsupervised-Image-normalization-Atlas/blob/master/example1.png)
+After 80 iterations
+![](https://github.com/miki998/Unsupervised-Image-normalization-Atlas/blob/master/example2.png)
+
+### Normalization of input to template
+- 
+- 
+- 
+!["NOT YET"]
 
 ## Deployment
 
