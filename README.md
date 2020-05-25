@@ -1,9 +1,6 @@
-# Diffusion Models: Maxwell-Demons
-![](https://img.shields.io/badge/<Implementation>-<demon0>-<success>)
-![](https://img.shields.io/badge/<Implementation>-<demon1>-<success>)
-![](https://img.shields.io/badge/<Implementation>-<demon2>-<orange>)
-![](https://img.shields.io/badge/<Implementation>-<demon3>-<lightgrey>)
-
+# Unsupervised Image normalization: Atlas
+![](https://img.shields.io/badge/<Implementation>-<population representing>-<success>)
+![](https://img.shields.io/badge/<Implementation>-<normalize input>-<success>)
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R5R11K2H4)
 
@@ -20,6 +17,9 @@ What things you need to install the software and how to install them
 scikit-image
 matplotlib
 numpy
+pytorch
+notebook
+scipy
 ```
 
 ### Installing
@@ -28,15 +28,15 @@ Here are the steps to follow
 
 ```
 conda install environment.yml
-conda activate registration_course
+conda activate atlas
 ```
 
 ## Running the tests
 
-Again, simply run each script (for demo) demon0 if you wanna see the demo for demo0 and respectively for other demons
+Go over main.py, and COMMENT OUT the current script and UNCOMMENT OUT the DEMO part then:
 
 ```
-python3 demon0.py
+python3 main.py
 ```
 
 ### Break down into end to end tests
@@ -53,18 +53,9 @@ DISCLAIMER: the maximum generality we allow ourselves is to deal only with disks
 
 ![](https://github.com/miki998/image_registration-maxwell_demons/blob/master/readme_images/demon0.png)
 
-#### Implementation of demon 1
-- demons are on are scattererd on the the full grid of $S$ but where the intensity grad is non-zero.
-- free form deformation, effect of force using Gaussian filter
-- trilinear interpolation in $M$
-- magnitude of force given by optical flow, direction too, so then link back to trilinear interpolation to get final direction and momentum
-
-![](https://github.com/miki998/image_registration-maxwell_demons/blob/master/readme_images/demon1.png)
-
-
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+None yet, you can do some pull requests to me
 
 ## Built With
 
