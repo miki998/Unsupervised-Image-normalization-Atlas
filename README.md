@@ -1,6 +1,6 @@
 # Unsupervised Image normalization: Atlas
-![](https://img.shields.io/badge/<Implementation>-<population representing>-<success>)
-![](https://img.shields.io/badge/<Implementation>-<normalize input>-<success>)
+![](https://img.shields.io/badge/<Implementation>-<population_representing>-<success>)
+![](https://img.shields.io/badge/<Implementation>-<normalize_input>-<success>)
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R5R11K2H4)
 
