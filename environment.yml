@@ -1,4 +1,4 @@
-name: registration_course
+name: atlas
 channels:
   - conda-forge
 dependencies:

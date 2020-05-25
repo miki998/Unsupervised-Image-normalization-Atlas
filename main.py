@@ -37,11 +37,16 @@ control_points, momenta,optim_template,deformed_digits = atlas_learn_template(di
                                                                           gamma,eps,
                                                                           template=digit_template,
                                                                           landmarks=None)
+
+#save control point and momentum for new input normalization
+save_control(control_points)
+save_momentum(momenta)
+
 plt.imshow(optim_template)
 plt.show()
 cv2.imwrite("normalized.png",optim_template)
 
-#DEMO: uncomment for usage
+#DEMO: uncomment for usage demo
 # dico_images = {}
 # for i in range(1,21):
 #     dico_images[i] = np.array(mpimg.imread("./Images/digits/digit_2_sample_{}.png".format(i))) 

@@ -102,3 +102,20 @@ def mean_image(dico):
     image_arrays = np.array(image_arrays)
     return np.mean(image_arrays,axis=0)
 
+def save_momentum(array):
+    with open('momentum.npy', 'wb') as f:
+        np.save(f, array)
+
+def save_control(array):
+    with open('control.npy', 'wb') as f:
+        np.save(f, array)
+
+
+def load_weights(paths):
+    with open('momentum.npy', 'rb') as f:
+        a = np.load(f)
+
+    with open('control.npy', 'rb') as g:
+        b = np.load(g)
+
+    return a,b
