@@ -3,11 +3,15 @@ import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import torch
 from decimal import Decimal
+from atlas_helpers import *
+from helper_plot import *
+from elementary import *
+
 
 tensor_type = torch.DoubleTensor
 
 
-def atlas_learn_template(dico_images,niter,kernel_width,gamma,eps,template=None,landmarks=None):
+def atlas_learn_template(dico_images,niter,kernel_width,gamma,eps,template=None,landmarks=None,verbose=False):
     
     '''
     This is the principal function, which computes gradient descent to minimize cost function,
@@ -58,20 +62,20 @@ def atlas_learn_template(dico_images,niter,kernel_width,gamma,eps,template=None,
 
     
     ##### Plot template at the beginning and first original digits
-    
-    plt.figure()
-    plt.subplot(1,5,1)
-    plt.imshow(template_data.detach().numpy(),cmap='gray')
-    plt.subplot(1,5,2)
-    plt.imshow(np.clip(Images[...,0],0,1),cmap='gray')
-    plt.subplot(1,5,3)
-    plt.imshow(np.clip(Images[...,1],0,1),cmap='gray')
-    plt.subplot(1,5,4)
-    plt.imshow(np.clip(Images[...,2],0,1),cmap='gray')
-    plt.subplot(1,5,5)
-    plt.imshow(np.clip(Images[...,3],0,1),cmap='gray')
-    plt.title('Template at the beginning and first four digits')
-    plt.show()
+    if verbose:
+        plt.figure()
+        plt.subplot(1,5,1)
+        plt.imshow(template_data.detach().numpy(),cmap='gray')
+        plt.subplot(1,5,2)
+        plt.imshow(np.clip(Images[...,0],0,1),cmap='gray')
+        plt.subplot(1,5,3)
+        plt.imshow(np.clip(Images[...,1],0,1),cmap='gray')
+        plt.subplot(1,5,4)
+        plt.imshow(np.clip(Images[...,2],0,1),cmap='gray')
+        plt.subplot(1,5,5)
+        plt.imshow(np.clip(Images[...,3],0,1),cmap='gray')
+        plt.title('Template at the beginning and first four digits')
+        plt.show()
       
     #######################    
     #### Iterations    
@@ -115,19 +119,20 @@ def atlas_learn_template(dico_images,niter,kernel_width,gamma,eps,template=None,
    
             ##### Plot template and deformed template according to first digits
 
-            plt.figure()
-            plt.subplot(1,5,1)
-            plt.imshow(np.clip(template_data.detach().numpy(),0,1),cmap='gray')
-            plt.title('Template')
-            plt.subplot(1,5,2)
-            plt.imshow(np.clip(deformed_template.detach().numpy()[...,0],0,1),cmap='gray')
-            plt.subplot(1,5,3)
-            plt.imshow(np.clip(deformed_template.detach().numpy()[...,1],0,1),cmap='gray')
-            plt.subplot(1,5,4)
-            plt.imshow(np.clip(deformed_template.detach().numpy()[...,2],0,1),cmap='gray')
-            plt.subplot(1,5,5)
-            plt.imshow(np.clip(deformed_template.detach().numpy()[...,3],0,1),cmap='gray')
-            plt.show()
+            if verbose:
+                plt.figure()
+                plt.subplot(1,5,1)
+                plt.imshow(np.clip(template_data.detach().numpy(),0,1),cmap='gray')
+                plt.title('Template')
+                plt.subplot(1,5,2)
+                plt.imshow(np.clip(deformed_template.detach().numpy()[...,0],0,1),cmap='gray')
+                plt.subplot(1,5,3)
+                plt.imshow(np.clip(deformed_template.detach().numpy()[...,1],0,1),cmap='gray')
+                plt.subplot(1,5,4)
+                plt.imshow(np.clip(deformed_template.detach().numpy()[...,2],0,1),cmap='gray')
+                plt.subplot(1,5,5)
+                plt.imshow(np.clip(deformed_template.detach().numpy()[...,3],0,1),cmap='gray')
+                plt.show()
     
 
     

@@ -94,3 +94,11 @@ def discretisation_step(cp, alpha, dt, kernel_width):
     res_cp = cp + dt * torch.matmul(gaussian_kernel(cp, cp, kernel_width), alpha)
     res_alpha = alpha - dt / 2  * h_gradx(cp, alpha, kernel_width)
     return res_cp, res_alpha
+
+def mean_image(dico):
+    image_arrays = []
+    for key in dico.keys():
+        image_arrays.append(dico[key])
+    image_arrays = np.array(image_arrays)
+    return np.mean(image_arrays,axis=0)
+

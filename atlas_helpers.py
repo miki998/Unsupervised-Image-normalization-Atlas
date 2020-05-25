@@ -3,6 +3,8 @@ import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import torch
 from decimal import Decimal
+from helper_plot import *
+from elementary import *
 
 tensor_type = torch.DoubleTensor
 
@@ -77,7 +79,6 @@ def register_image(traj_cp, traj_alpha, image, kernel_width):
     returns the registered image, of same dimensions as image, (nr,nc)
     
     """
-    
     if image.ndim==2:
         i,j = image.shape
         k = 1
